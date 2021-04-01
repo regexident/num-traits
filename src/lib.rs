@@ -38,7 +38,7 @@ pub use cast::{cast, AsPrimitive, FromPrimitive, NumCast, ToPrimitive};
 pub use identities::{one, zero, One, Zero};
 pub use int::PrimInt;
 pub use ops::checked::{
-    CheckedAdd, CheckedDiv, CheckedMul, CheckedNeg, CheckedRem, CheckedShl, CheckedShr, CheckedSub,
+    CheckedAdd, CheckedMul, CheckedNeg, CheckedRem, CheckedShl, CheckedShr, CheckedSub,
 };
 pub use ops::inv::Inv;
 pub use ops::mul_add::{MulAdd, MulAddAssign};

@@ -1,4 +1,4 @@
-use core::ops::{Add, Div, Mul, Rem, Shl, Shr, Sub};
+use core::ops::{Add, Mul, Rem, Shl, Shr, Sub};
 
 /// Performs addition that returns `None` instead of wrapping around on
 /// overflow.
@@ -81,30 +81,6 @@ checked_impl!(CheckedMul, checked_mul, i64);
 checked_impl!(CheckedMul, checked_mul, isize);
 #[cfg(has_i128)]
 checked_impl!(CheckedMul, checked_mul, i128);
-
-/// Performs division that returns `None` instead of panicking on division by zero and instead of
-/// wrapping around on underflow and overflow.
-pub trait CheckedDiv: Sized + Div<Self, Output = Self> {
-    /// Divides two numbers, checking for underflow, overflow and division by
-    /// zero. If any of that happens, `None` is returned.
-    fn checked_div(&self, v: &Self) -> Option<Self>;
-}
-
-checked_impl!(CheckedDiv, checked_div, u8);
-checked_impl!(CheckedDiv, checked_div, u16);
-checked_impl!(CheckedDiv, checked_div, u32);
-checked_impl!(CheckedDiv, checked_div, u64);
-checked_impl!(CheckedDiv, checked_div, usize);
-#[cfg(has_i128)]
-checked_impl!(CheckedDiv, checked_div, u128);
-
-checked_impl!(CheckedDiv, checked_div, i8);
-checked_impl!(CheckedDiv, checked_div, i16);
-checked_impl!(CheckedDiv, checked_div, i32);
-checked_impl!(CheckedDiv, checked_div, i64);
-checked_impl!(CheckedDiv, checked_div, isize);
-#[cfg(has_i128)]
-checked_impl!(CheckedDiv, checked_div, i128);
 
 /// Performs an integral remainder that returns `None` instead of panicking on division by zero and
 /// instead of wrapping around on underflow and overflow.
